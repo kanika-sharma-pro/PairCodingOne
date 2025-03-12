@@ -52,4 +52,43 @@ public class AccountTest {
         //Then
         Assert.assertEquals(expectedAccountEmail, actualAccountEmail);
     }
+    @Test
+    public void WithdrawlTest() throws IllegalAccessException {
+        setUp();
+        account.withDrawl(50.0);
+        //Given
+        Double expectedAccountBalance = 450.0;
+
+
+        //When
+        Double actualAccountBalance = account.getAccountBalance();
+
+        //Then
+        Assert.assertEquals(expectedAccountBalance, actualAccountBalance);
+    }
+ @Test
+    public void DepositTest() throws IllegalAccessException {
+        setUp();
+        account.deposit(500.0);
+        //Given
+        Double expectedAccountBalance = 1000.0;
+
+
+        //When
+        Double actualAccountBalance = account.getAccountBalance();
+
+        //Then
+        Assert.assertEquals(expectedAccountBalance, actualAccountBalance);
+    }
+
+
+
+
+
+
+
 }
+
+
+
+
