@@ -1,15 +1,9 @@
 package io.zipcoder;
 
 public class SavingsAccount extends Account{
-    Double interestRate;
-    Boolean hasOverdraftProtection;
-
-
     public SavingsAccount(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber,Double interestRate, Boolean hasOverdraftProtection) {
         super(accountHolder, accountNumber, accountBalance, accountEmail, accountPhoneNumber);
 
-        this.interestRate = interestRate;
-        this.hasOverdraftProtection = hasOverdraftProtection;
     }
 
     public double calculateInterest(){

@@ -20,6 +20,7 @@ public class AccountTest {
 
         //When
         String actualBusinessName = account.getBusinessName();
+        account.
 
         //Then
         Assert.assertEquals(actualBusinessName, expectedBusinessName);

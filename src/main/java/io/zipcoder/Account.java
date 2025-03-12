@@ -11,17 +11,29 @@ public abstract class Account {
     private String accountEmail;
     private Integer accountPhoneNumber;
     Boolean hasOverdraftProtection;
+    Double interestRate;
     private ArrayList<Transaction>  transactionHistory = new ArrayList<>();
 
 
         //personal Account
-        public Account(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber){
+        public Account(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber, Boolean hasOverdraftProtection, Double interestRate){
             this.accountHolder = accountHolder;
             this.accountBalance = accountBalance;
             this.accountNumber = accountNumber;
             this.accountEmail = accountEmail;
             this.accountPhoneNumber = accountPhoneNumber;
+            this.hasOverdraftProtection = hasOverdraftProtection;
+            this.interestRate = interestRate;
         }
+        //Checking Account
+    public Account(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber, Boolean hasOverdraftProtection){
+        this.accountHolder = accountHolder;
+        this.accountBalance = accountBalance;
+        this.accountNumber = accountNumber;
+        this.accountEmail = accountEmail;
+        this.accountPhoneNumber = accountPhoneNumber;
+        this.hasOverdraftProtection = hasOverdraftProtection;
+    }
         //business account
         public Account(String businessName, Double accountNumber, Double accountBalance, String accountEmail){
             this.businessName = businessName;
@@ -29,6 +41,16 @@ public abstract class Account {
             this.accountNumber = accountNumber;
             this.accountEmail = accountEmail;
         }
+        //Savings Account
+        public Account(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber) {
+            this.accountHolder = accountHolder;
+            this.accountBalance = accountBalance;
+            this.accountNumber = accountNumber;
+            this.accountEmail = accountEmail;
+            this.accountPhoneNumber = accountPhoneNumber;
+
+        }
+
 
     public Account(String string) {
             this.accountHolder = string;
