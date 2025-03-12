@@ -20,7 +20,6 @@ public class AccountTest {
 
         //When
         String actualBusinessName = account.getBusinessName();
-        account.
 
         //Then
         Assert.assertEquals(actualBusinessName, expectedBusinessName);
@@ -38,5 +37,19 @@ public class AccountTest {
 
         //Then
         Assert.assertEquals(actualAccountNumber, expectedAccountNumber);
+    }
+
+    @Test
+    public void getAccountEmail(){
+        setUp();
+        //Given
+        String expectedAccountEmail = "123@123.com";
+
+
+        //When
+        String actualAccountEmail = account.getAccountEmail();
+
+        //Then
+        Assert.assertEquals(expectedAccountEmail, actualAccountEmail);
     }
 }
