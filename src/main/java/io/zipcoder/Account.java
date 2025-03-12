@@ -1,36 +1,79 @@
 package io.zipcoder;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.ArrayList;
 
 public abstract class Account {
-    private String accountHolder;
+    private String accountHolder = " ";
+    private String businessName;
     private Double accountNumber;
     private Double accountBalance;
-    private Boolean buisnessAcoount;
+    private String accountEmail;
+    private Integer accountPhoneNumber;
+    Boolean hasOverdraftProtection;
     private ArrayList<Transaction>  transactionHistory = new ArrayList<>();
 
-        public Account(String accountHolder, Double accountNumber, Double accountBalance, Boolean buisnessAcoount, Transaction transactionHistory){
+
+        //personal Account
+        public Account(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber){
             this.accountHolder = accountHolder;
             this.accountBalance = accountBalance;
             this.accountNumber = accountNumber;
-           // this.transactionHistory = Transaction transactionHistory;
+            this.accountEmail = accountEmail;
+            this.accountPhoneNumber = accountPhoneNumber;
+        }
+        //business account
+        public Account(String businessName, Double accountNumber, Double accountBalance, String accountEmail){
+            this.businessName = businessName;
+            this.accountBalance = accountBalance;
+            this.accountNumber = accountNumber;
+            this.accountEmail = accountEmail;
         }
 
+    public Account(String string) {
+            this.accountHolder = string;
+    }
+
+
+    //checking account
+//        public Account(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber, Boolean hasOverdraftProtection){
+//
+//        }
+
     public String getAccountHolder() {
-        return accountHolder;
+        return this.accountHolder;
     }
 
     public Double getAccountBalance() {
         return accountBalance;
     }
-    public Boolean getBuisnessAcoount() {
-        return buisnessAcoount;
-    }
 
     public void setAccountBalance(Double accountBalance) {
         this.accountBalance = accountBalance;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
+    }
+
+    public String getAccountEmail() {
+        return accountEmail;
+    }
+
+    public void setAccountEmail(String accountEmail) {
+        this.accountEmail = accountEmail;
+    }
+
+    public Integer getAccountPhoneNumber() {
+        return accountPhoneNumber;
+    }
+
+    public void setAccountPhoneNumber(Integer accountPhoneNumber) {
+        this.accountPhoneNumber = accountPhoneNumber;
     }
 
     public Double getAccountNumber() {

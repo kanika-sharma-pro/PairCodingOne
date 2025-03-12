@@ -1,4 +1,8 @@
 package io.zipcoder;
 
-public class InvestmentAccount {
+public class InvestmentAccount extends Account{
+
+    public InvestmentAccount(String accountHolder, Double accountNumber, Double accountBalance, String accountEmail, Integer accountPhoneNumber) {
+        super(accountHolder, accountNumber, accountBalance, accountEmail, accountPhoneNumber);
+    }
 }
