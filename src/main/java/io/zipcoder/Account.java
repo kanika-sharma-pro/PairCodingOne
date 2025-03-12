@@ -10,7 +10,7 @@ public abstract class Account {
     private Double accountBalance;
     private String accountEmail;
     private Integer accountPhoneNumber;
-    Boolean hasOverdraftProtection;
+    Boolean hasOverdraftProtection = false;
     Double interestRate;
     private ArrayList<Transaction> transactionHistory = new ArrayList<>();
 
@@ -114,7 +114,7 @@ public abstract class Account {
     }
 public void deposit(Double amount) {
 
-    if (amount < accountBalance) {
+    if (amount < 0) {
         throw new IllegalArgumentException("deposit cannot be negative");
     } else {  accountBalance+= amount; }
 
