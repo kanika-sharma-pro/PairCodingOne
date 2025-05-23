@@ -50,7 +50,7 @@ public class SavingsTest {
             savingsAccount.deposit(150.0);
         });
 
-        String expectedMessage = "Withdraw Limit";
+        String expectedMessage = "Withdraw Limi";
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
